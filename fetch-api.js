@@ -28,9 +28,8 @@
 
 
 
-
 //external api ile fetch kullanımı
-function getExtrnlApi() {
+function fetchGet() {
     fetch('https://randomuser.me/api/?results=5')
         .then(users => {
             return users.json();
@@ -39,25 +38,28 @@ function getExtrnlApi() {
         .then(users => {
             var html = '<div>';
             users.results.forEach(element => {
-                html += `
-                <img src="${element.picture.large}">
-                <div>${element.name.title}</div>
-                <div>${element.name.first}</div>
-                <div>Phone Number : ${element.phone}</div>
-                `;
+                html += ` <
+                                    img src = "${element.picture.large}" >
+                                        <
+                                        div > $ { element.name.title } < /div> <
+                                        div > $ { element.name.first } < /div> <
+                                        div > Phone Number: $ { element.phone } < /div>
+                                    `;
                 html += '</div>'
             });
             document.querySelector('#users').innerHTML = html;
         });
 }
-getExtrnlApi();
+fetchGet();
 
 // Fetch API  POST Request
 /* NOT :  Localde oluşturduğumuz bir dosya içerisinde POST işlemi yapamayız bunun için
 server tabanlı bir dil olmalı Node.js gibi  */
 
-function postExternalFetchApi() {
-    const url = 'https://jsonplaceholder.typicode.com/todos/'
+
+
+function fetchPost(URL) {
+    const url = 'https://randomuser.me/api/?results=5';
     var data = {
         method: "POST",
         body: JSON.stringify({
@@ -76,4 +78,4 @@ function postExternalFetchApi() {
             console.log(response)
         });
 }
-postExternalFetchApi();
+fetchPost();
