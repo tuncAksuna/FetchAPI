@@ -1,30 +1,30 @@
-//text ile fetch api kullanımı
-function getText() {
-    fetch('text.txt')
-        .then(response => {
-            return response.text();
-            //İkinci then ifadesinde yakalamak için return ettik
-        })
-        .then(data => {
-            // ilk then ifadesinden return edilen değeri yakaladık
-            console.log(data);
-        });
+// //text ile fetch api kullanımı
+// function getText() {
+//     fetch('text.txt')
+//         .then(response => {
+//             return response.text();
+//             //İkinci then ifadesinde yakalamak için return ettik
+//         })
+//         .then(data => {
+//             // ilk then ifadesinden return edilen değeri yakaladık
+//             console.log(data);
+//         });
 
-}
-getText();
+// }
+// getText();
 
 
-//json ile fetch api kullanımı
-function getJson() {
-    fetch('fetch.json')
-        .then((response) => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        });
-}
-getJson();
+// //json ile fetch api kullanımı
+// function getJson() {
+//     fetch('fetch.json')
+//         .then((response) => {
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log(data);
+//         });
+// }
+// getJson();
 
 
 
@@ -52,7 +52,7 @@ function getExtrnlApi() {
 }
 getExtrnlApi();
 
-// Fetch API ile POST Request
+// Fetch API  POST Request
 /* NOT :  Localde oluşturduğumuz bir dosya içerisinde POST işlemi yapamayız bunun için
 server tabanlı bir dil olmalı Node.js gibi  */
 
