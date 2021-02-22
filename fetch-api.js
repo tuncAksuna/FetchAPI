@@ -39,13 +39,11 @@ function fetchGet() {
             var html = '<div>';
             users.results.forEach(element => {
                 html += ` <
-                                    img src = "${element.picture.large}" >
-                                        <
-                                        div > $ { element.name.title } < /div> <
-                                        div > $ { element.name.first } < /div> <
-                                        div > Phone Number: $ { element.phone } < /div>
-                                    `;
-                html += '</div>'
+                        img src = "${element.picture.large}" >
+                         <div> ${ element.name.title } </div> 
+                         <div> ${ element.name.first } </div> 
+                         <div > Phone Number: ${ element.phone } </div>`;
+                html += '</div>';
             });
             document.querySelector('#users').innerHTML = html;
         });
@@ -56,10 +54,9 @@ fetchGet();
 /* NOT :  Localde oluşturduğumuz bir dosya içerisinde POST işlemi yapamayız bunun için
 server tabanlı bir dil olmalı Node.js gibi  */
 
-
-
 function fetchPost(URL) {
     const url = 'https://randomuser.me/api/?results=5';
+
     var data = {
         method: "POST",
         body: JSON.stringify({
@@ -72,10 +69,10 @@ function fetchPost(URL) {
             'content-type': 'application/json'
         })
     }
-
     fetch(url, data)
-        .then(response => {
-            console.log(response)
-        });
+        .then(res => {
+            console.log(url)
+        })
 }
+
 fetchPost();
